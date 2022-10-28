@@ -147,7 +147,11 @@ Soloidity Concepts :->
 
 	/*Loops*/
 	FOR , WHILE , CONTINUE, BREAK;(Same as normal java)
-	
+
+    /* External and Public */
+        -> https://ethereum.stackexchange.com/questions/19380/external-vs-public-best-practices
+
+        
 	/*ERROR*/ (require , revrt, assert)
 	error -> when an error is thrown inside a transaction 
 			1)gas will be refunded.
