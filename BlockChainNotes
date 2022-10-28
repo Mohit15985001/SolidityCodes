@@ -1,0 +1,164 @@
+1)
+ 	Private key > public key > address
+ 	What this means is that public keys are derived from private key.
+ 	Address are derived from public key.
+2)
+	view and pure are two functions in solidity which do not have tp pay gas
+3) 	paragama version -> fr particular version 
+	pragma ^version -> for mentioned version and above
+	paragma version >= version < -> range of compiler version.
+4)     
+	//view -> view will only read from the function .
+      //pure -> pure won't allow any modification in that function pure also won't allow to read from a function .
+	however if you call view and pure function inside a function which requires gas, then pure and function will also take gas 
+5) 
+	event -> returns logs
+	logs-> update made via smart contract in etherum blockchain.
+
+6) 	In solidity in an array we use push and pop to insert and remove elements.
+
+7) 	call data -> temporary storage that can't be modified.
+   	memory-> temporary storage that can be modified.
+   	storage-> permanent storage data.
+
+8) 	Data locataion such as memory can only be specifed for array, struct or mapping. 
+	string is an array of bytes thus we need to use "memory" when definig string in function. 
+
+9) 	Blue Blocks are functions which when called do not require any gas, however box with orange colour are functions which when called requires gas.
+
+10) 	import can be used to import other smart contracts 
+	is -> keyword is used to inherit from parent smart contracts
+	new -> keyword can be used to create new instance of smart contract which gets diffrenet address everytime.
+
+11) 	override-> when we want to overrride function of parent class from our child class function we use keyword "override"
+	and the function from parent class is defined as virtual so that it can be overrided.
+
+12) 	smart contracts can hold funds just like wallet's.
+
+13) 	payable -> to make the function payable we can use keyword "Payable".
+
+14) 	require -> the statments above require will be reverted and the statements below  which were to be executed and had the gas for it will be reverted back.
+
+15) 	oracle -> Any device that interacts with the off-chain world to provide external data or computation to smart contracts.
+
+16) 	msg.sender -> msg.sender is the address of whoever calls the function.
+
+17) 	msg.value -> msg.value is the value of the blockchain currency that is being sent.
+
+18) 	when a function is declared as modifier , before excequting the function modifer will run after that the code in the function  will run.
+
+19) 	constructor -> constructor is the function which is immediately called as soon as the contract is deployed.
+
+20) 	A function that calls a function in the same contract is called an internal function.
+	And a function that calls a function that's from a different smart contract is called an external function
+
+21) 	   // Ether is sent to contract 
+    //      is msg.data empty?
+    //          /   \ 
+    //         yes  no
+    //         /     \
+    //    receive()?  fallback()                 receive -> if money is sent to contract recieve will get exeuted by default.
+    //     /   \ 						 fallback -> if data is sent with money fallback gets executed.
+    //   yes   no
+    //  /        \
+    //receive()  fallback()
+
+22) 	constant and immutable are the keywords that can be declared only once.
+
+	constant -> constant is declared then and there
+
+	immutable -> immutable are first instantiated and then declared
+
+23) 	transfer,Send ,call -> https://medium.com/coinmonks/solidity-transfer-vs-send-vs-call-function-64c92cfc878a
+
+				8 : 20 - comlete yooohooooo!!!!!!!!!!!!!!!
+
+Soloidity Concepts :->
+
+	/* INTRO*/
+ 	- we nedd to include license , otherwise we might get an compiler error.
+	- we need to declare version of solidity being used. there are diffrent ways to declare it, when deploying its better to use a  specific version.
+	- public -> public helps to view the data after contract is deployed.
+
+	
+	/* DATA VALUES*/
+	- there are numerous data types like any other programming language.
+	uint -> means positive only
+	int -> positive and negative both.
+
+	/* Function Variable*/
+	external ->external meand when we deploy this contract we will be able to call this function.
+	pure -> pure means it is read only wont allow to make any modifications.
+	
+
+	variables are of 3 types
+	1) state variable.
+	2) local variable
+ 	3) global variable.
+
+
+	/* STATE VARIABLES*/
+	- state variable are the variables that store data on blockchain.
+	How we declare state variables?
+	-> these variables are inside the contract but outside the function variable.
+	-> if they are updated in the function they store the value that is assigned to that variables in that function.
+	declared outside a function
+	stored on the blockchain
+
+	/*LOCAL VARIABLE*/
+	local variable -> local variable are the variable that are store inside the function they exist only when that function is being executed.
+	once function is terminated the local variables are vanished.
+	declared inside a function
+	not stored on the blockchain
+
+	/*GLOBAL VARIABLE*/
+	MSG.SENDER -> msg.sender stores the address that called this function.
+	let us say Alex has an account and from her account she calls this function in which msg.sender is present
+	so msg.sender will be equal to her account.	
+	The data type of msg.sender is address.
+
+	BLOCK.TIMESTAMP -> block.timestamp stores the unixt time stamp of when this function was called.
+	the data type of block.timestamp is uint.
+	
+	BLOCK.NUMBER -> block.number stores the current blocknumber
+	the data type of block.timestamp is uint.
+
+	/* VIEW AND PURE FUNCTION*/
+	VIEW -> view can read data from the blockchain.
+		it doesn't modify any data on the blockchain.
+
+	PURE -> pure functions do not read anythng from the blockchain such as state variable, smart contracts or any other data from
+		the blockchain (global variables).
+		it doesn't modify any data on the blockchain.
+
+	SIMPLE function-> (without pure or view)-> view and pure cannot be used when we want to update state variables
+	thus simple functions can be used for that purpose.
+	it modifies the data on the blockchain.
+
+	/*DEFAULT VALUES*/
+	state variables and global variables have default values if not assigned any.
+
+	/*CONSTANTS*/
+	CONSTASNT -> sometimes there are state variables that you know will never change, we can declare this type of variables as constant.
+	why would we so that -> to save the gas.
+
+	/*IfElse*/
+	normal if else , tertiary operator can also be used.
+
+	/*Loops*/
+	FOR , WHILE , CONTINUE, BREAK;(Same as normal java)
+	
+	/*ERROR*/ (require , revrt, assert)
+	error -> when an error is thrown inside a transaction 
+			1)gas will be refunded.
+			2)State variables which were updated are reverted.(the changes that were made to state variable will be undone)
+	(we can also use custom errors to save gas)
+	REQUIRE -> require is mostly used to validate inputs and for access control.
+			(controlling who gets to call the function)
+	Syntax -> require(condition, message);
+			message -> message is shown if the conditin in "require" fails.
+	
+ 
+	
+	
+	
