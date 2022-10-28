@@ -151,16 +151,40 @@ Soloidity Concepts :->
     /* External and Public */
         -> https://ethereum.stackexchange.com/questions/19380/external-vs-public-best-practices
 
-        
+
 	/*ERROR*/ (require , revrt, assert)
 	error -> when an error is thrown inside a transaction 
 			1)gas will be refunded.
 			2)State variables which were updated are reverted.(the changes that were made to state variable will be undone)
 	(we can also use custom errors to save gas)
 	REQUIRE -> require is mostly used to validate inputs and for access control.
+            Longer the message more the gas will be used.
 			(controlling who gets to call the function)
 	Syntax -> require(condition, message);
 			message -> message is shown if the conditin in "require" fails.
+
+    REVERT -> revert can be used with "if" 
+    if(_i>10){
+            revert("i>10");
+        }
+    ASSERT -> ASSERT should always be true.
+                if assert is not true , there is a bug in the smart contract.   
+                use assert to check for conditions that should always be true.
+                there will be a gas refund of remaining gas
+                like if 1000 gas is sent and 100 gas is used 900 gas will be reverted.
+                also if any state variables were updated that will be undone.
+
+    CUSTOM_ERROR -> CUSTOM_ERROR  use less gas compared to "require".
+                    custom error can only be used with revert
+                Syntax:
+                error Myerror( address caller , uint i);
+
+                function MycustomError(uint _i) public view{
+                    if(_i > 10){
+                    revert Myerror(msg.sender,_i);
+                    }
+                it only returns in the form of parameters and parameters have data types
+                such as address, uint, string and others.
 	
  
 	
