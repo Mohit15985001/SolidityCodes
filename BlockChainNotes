@@ -185,6 +185,9 @@ Soloidity Concepts :->
                     }
                 it only returns in the form of parameters and parameters have data types
                 such as address, uint, string and others.
+
+    /*FUNCTION MODIFIER*/
+    
 	
  
 	
