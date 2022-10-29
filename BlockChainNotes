@@ -87,7 +87,7 @@ Soloidity Concepts :->
 	int -> positive and negative both.
 
 	/* Function Variable*/
-	external ->external meand when we deploy this contract we will be able to call this function.
+	external ->external means when we deploy this contract we will be able to call this function.
 	pure -> pure means it is read only wont allow to make any modifications.
 	
 
@@ -116,8 +116,9 @@ Soloidity Concepts :->
 	let us say Alex has an account and from her account she calls this function in which msg.sender is present
 	so msg.sender will be equal to her account.	
 	The data type of msg.sender is address.
+    msg.sender stores the address of the account that deployed this contract.
 
-	BLOCK.TIMESTAMP -> block.timestamp stores the unixt time stamp of when this function was called.
+	BLOCK.TIMESTAMP -> block.timestamp stores the unix time stamp of when this function was called.
 	the data type of block.timestamp is uint.
 	
 	BLOCK.NUMBER -> block.number stores the current blocknumber
@@ -127,7 +128,7 @@ Soloidity Concepts :->
 	VIEW -> view can read data from the blockchain.
 		it doesn't modify any data on the blockchain.
 
-	PURE -> pure functions do not read anythng from the blockchain such as state variable, smart contracts or any other data from
+	PURE -> pure functions do not read anything from the blockchain such as state variable, smart contracts or any other data from
 		the blockchain (global variables).
 		it doesn't modify any data on the blockchain.
 
@@ -186,7 +187,12 @@ Soloidity Concepts :->
                 it only returns in the form of parameters and parameters have data types
                 such as address, uint, string and others.
 	
- 
+    /*FUNCTION MODIFIER*/
+        function modifier helps us to reuse the code
+        checkout this vid -> https://www.youtube.com/watch?v=b6FBWsz7VaI&list=PLO5VPQH6OWdVQwpQfw9rZ67O6Pjfo6q-p&index=15
 	
-	
+	/*CONSTRUCTOR*/ 
+        1)CONSTRUCTOR are special fuctions that are only called once the 
+        contract is deployed.
+        2)its mainly used to intialize state variables.
 	
