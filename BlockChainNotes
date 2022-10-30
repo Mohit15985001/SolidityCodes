@@ -195,4 +195,40 @@ Soloidity Concepts :->
         1)CONSTRUCTOR are special fuctions that are only called once the 
         contract is deployed.
         2)its mainly used to intialize state variables.
-	
+
+	/*Outputs*/
+	function returnMany() public pure returns (uint, bool){
+        return (1, true);
+    }
+	parameters are mentoined and their datatype that will be returned.
+	if we want to take one paramter only
+	(, bool y) = returnMany();
+	we can simply omit the one which is not required,
+
+	/*ARRAYS*/
+	Array are of two types
+	1) Dynamic : uint [] nums;
+	2) Fixed Size : uint [4] FixedLength =[4,5,6,7];
+	Diffrent operations that can be performed on arrays are:
+	1)push(Insertion);  //nums.push(4);
+	2)get // uint x = nums[index];
+	3)assignment // nums [index]=element;
+	4)deletion of element -> note that size of array will not be changed 
+	only the element will be replaced with default value for uint : 0;
+	delete nums[1]; //[4,0,6,7];
+	5)pop -> removes the last element;
+		reduces the size of array by one.
+	6)len -> nums.length; 
+
+	//creating array in Memory
+	uint [] memory a = new uint[](5);
+	memory in array cannot be dynamic they have to be created of fix type.
+	thus pop and push are not valid in memory type array.
+
+	// Returning array from function 
+	we can return an array from function however it is not recommended 
+	reason being same, it will use up a lot of gas, bigger the array more the gas will be used.
+	syntax:
+		function returnArray() external view returns (uint [] memory){
+        return nums;
+    }
